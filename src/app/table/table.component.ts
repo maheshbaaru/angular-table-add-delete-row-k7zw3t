@@ -60,15 +60,4 @@ export class TableComponent {
       this.row.splice(x, 1);
     }
   }
-
-  // addOrder() {
-  //   const resp = this.http.post(this.url, this.row).subscribe(
-  //     (response) => {
-  //       console.log(response);
-  //     },
-  //     (response) => {
-  //       console.log(response);
-  //     }
-  //   );
-  // }
 }
