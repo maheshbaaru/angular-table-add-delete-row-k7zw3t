@@ -1,4 +1,4 @@
-<div style="display:inline;width:100%"></div>
+<!-- <div style="display:inline;width:100%"></div>
 <br />
 <table class="style" (onCellEditEnter)="editing($event)">
   <tr>
@@ -6,7 +6,7 @@
     <th>ProductName</th>
     <th>Quantity</th>
     <th>UnitPrice</th>
-    <!-- <th>Total</th> -->
+     <th>Total</th> 
     <th></th>
   </tr>
   <tr *ngFor="let item of row; let i = index">
@@ -14,9 +14,9 @@
     <td><input type="text" [(ngModel)]="item.name" /></td>
     <td><input type="text" [(ngModel)]="item.quantity" /></td>
     <td><input type="text" [(ngModel)]="item.price" /></td>
-    <!-- <td><input type="text" value="{{ item.price * item.quantity }}" /></td> -->
-    <td>
-      <button (click)="deleteRow(i)"><i class="fa fa-trash"></i></button>
+    <td><input type="text" value="{{ item.price * item.quantity }}" /></td> -->
+<!-- <td>
+      <button style="display:inline;" (click)="deleteRow(i)">delete</button>
       <div style="display:inline;">
         <button (click)="addTable()">Add Row</button>
       </div>
@@ -56,13 +56,26 @@
             </div>
           </div>
         </div>
-        <div class="mt-20">
-          <button type="button" class="popup-btn">Proceed</button>
-          <button type="button" data-dismiss="modal" class="cancel-btn">
-            Cancel
-          </button>
-        </div>
       </div>
     </div>
   </div>
-</div>
+</div> -->
+<button (click)="addTable()">Add Row</button> <br />
+<br />
+<table class="style">
+  <tr>
+    <th>id</th>
+    <th>name</th>
+    <th>email</th>
+    <th></th>
+  </tr>
+  <tr *ngFor="let item of row; let i = index">
+    <td><input type="text" /></td>
+    <td><input type="text" /></td>
+    <td><input type="text" /></td>
+    <td>
+      <button (click)="deleteRow(i)">delete</button>
+    </td>
+    <button (click)="addrow(i)">add row</button>
+  </tr>
+</table>
