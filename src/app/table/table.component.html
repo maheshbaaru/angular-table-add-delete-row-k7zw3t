@@ -1,0 +1,68 @@
+<div style="display:inline;width:100%"></div>
+<br />
+<table class="style" (onCellEditEnter)="editing($event)">
+  <tr>
+    <th style="max-width=60px">RowId</th>
+    <th>ProductName</th>
+    <th>Quantity</th>
+    <th>UnitPrice</th>
+    <!-- <th>Total</th> -->
+    <th></th>
+  </tr>
+  <tr *ngFor="let item of row; let i = index">
+    <td><input type="text" [(ngModel)]="item.id" /></td>
+    <td><input type="text" [(ngModel)]="item.name" /></td>
+    <td><input type="text" [(ngModel)]="item.quantity" /></td>
+    <td><input type="text" [(ngModel)]="item.price" /></td>
+    <!-- <td><input type="text" value="{{ item.price * item.quantity }}" /></td> -->
+    <td>
+      <button (click)="deleteRow(i)"><i class="fa fa-trash"></i></button>
+      <div style="display:inline;">
+        <button (click)="addTable()">Add Row</button>
+      </div>
+    </td>
+  </tr>
+</table>
+
+<div
+  id="openModal"
+  class="modal fade"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="openModalLabel"
+  style="display: none;"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="popup">
+        <h3 class="heading-3">
+          Please enter the verification code sent on customer’s mobile
+        </h3>
+        <div class="content">
+          <div class="form-wrapper">
+            <div class="form-group">
+              <input
+                type="text"
+                id="verification"
+                value=""
+                class="form-field webkit-square"
+                placeholder="Verification Code"
+              />
+              <label for="verification" class="form-label"
+                >Verification Code</label
+              >
+              <button type="button" class="resend-code">Resend Code</button>
+            </div>
+          </div>
+        </div>
+        <div class="mt-20">
+          <button type="button" class="popup-btn">Proceed</button>
+          <button type="button" data-dismiss="modal" class="cancel-btn">
+            Cancel
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
